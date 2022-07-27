@@ -34,6 +34,7 @@ filter_1 <- function(m, c, irr_stat, reg) {
   # m <- "Energy Use Fieldprint"
   # c <- "Corn grain"
   # irr_stat <- "Irrigated"
+  # reg <- "Central"
   
   dat <- d02_pct_impact
   
@@ -41,7 +42,8 @@ filter_1 <- function(m, c, irr_stat, reg) {
     dat_2 <- dat %>% filter(metric_label == m, crop == c, irrigation_status == irr_stat)
   } else {
     dat_2 <- dat %>% filter(metric_label == m, crop == c, irrigation_status == irr_stat, 
-                            region_label %in% reg) 
+                            #region_label %in% reg) 
+                            region_group %in% reg) 
   }
   
   # sort by median val of each scenario
@@ -62,42 +64,62 @@ plt_1 <- function(m, c, irr_stat, reg) {
   # filter data
   dat <- filter_1(m, c, irr_stat, reg)
 
-  # get five colors to use for region groupings
-  gg_color_hue <- function(n) {
-    hues = seq(15, 375, length = n + 1)
-    hcl(h = hues, l = 65, c = 100)[1:n]
-  }
+  # # get five colors to use for region groupings
+  # gg_color_hue <- function(n) {
+  #   hues = seq(15, 375, length = n + 1)
+  #   hcl(h = hues, l = 65, c = 100)[1:n]
+  # }
+  # 
+  # color_mapping <- data.frame(
+  #   region_group = c("Central",
+  #                    "NE/Appalachia",
+  #                    "Southeast",
+  #                    "Southwest/California",
+  #                    "Mountains/PNW"),
+  #   col = gg_color_hue(5),
+  #   stringsAsFactors = FALSE
+  #   )
 
-  color_mapping <- data.frame(
-    region_group = c("Central",
-                     "NE/Appalachia",
-                     "Southeast",
-                     "Southwest/California",
-                     "Mountains/PNW"),
-    col = gg_color_hue(5),
-    stringsAsFactors = FALSE
-    )
+  # color_scale <- dat %>%
+  #   distinct(region_group) %>%
+  #   left_join(color_mapping, by = "region_group")
 
-  color_scale <- dat %>%
-    distinct(region_group) %>%
-    left_join(color_mapping, by = "region_group")
+  #--isn't working 7/22
+  # gg <- dat %>%
+  #   highlight_key(~region_label) %>%
+  #   ggplot(aes(x = pct_change, y = change_name_label,
+  #              text = paste0("Region: ", region_label,
+  #                            "<br>Pct Change: ", percent(pct_change, accuracy = 1)))) +
+  #   geom_vline(aes(xintercept = 0), color = "grey70") +
+  #   geom_point(aes(color = region_group), alpha = 0.8, size = 2) +
+  #   scale_x_continuous(labels = percent_format(accuracy = 1)) +
+  #   scale_color_manual(breaks = color_scale$region_group, values = color_scale$col) +
+  #   #theme_cust_1() +
+  #   theme(legend.position = "none") +
+  #   labs(title = paste0(m, ": ", c, ", ", irr_stat),
+  #        color = "Region") +
+  #   ylab("") +
+  #   xlab("Percent Change")
 
-  gg <- dat %>%
-    highlight_key(~region_label) %>%
-    ggplot(aes(x = pct_change, y = change_name_label,
+  #--try to change groupings of regions 7/22
+  gg <- 
+    dat %>%
+    #highlight_key(~region_label) %>%
+    ggplot(aes(x = change_name_label,
+               y = pct_change, 
                text = paste0("Region: ", region_label,
                              "<br>Pct Change: ", percent(pct_change, accuracy = 1)))) +
-    geom_vline(aes(xintercept = 0), color = "grey70") +
-    geom_point(aes(color = region_group), alpha = 0.8, size = 2) +
-    scale_x_continuous(labels = percent_format(accuracy = 1)) +
-    scale_color_manual(breaks = color_scale$region_group, values = color_scale$col) +
+    geom_hline(aes(yintercept = 0), color = "grey70") +
+    geom_point(aes(color = region_label), alpha = 1, size = 2) +
+    scale_y_continuous(labels = percent_format(accuracy = 1)) +
     #theme_cust_1() +
-    theme(legend.position = "none") +
-    labs(title = paste0(m, ": ", c, ", ", irr_stat),
-         color = "Region") +
-    ylab("") +
-    xlab("Percent Change")
-
+    theme(legend.position = "top") +
+    labs(title = paste0(m, ": ", reg, ", ", c, ", ", irr_stat),
+         color = "Specific Region",
+         y = "Percent Change",
+         x = NULL) + 
+      coord_flip()
+  
   ggplotly(gg, tooltip = "text", height = max(length(unique(dat$change_name_label))*20, 200)) %>%
     highlight(on = "plotly_click", off = "plotly_doubleclick")
   
@@ -202,13 +224,16 @@ plt_2 <- function(m, c, irr_stat) {
   
 }
 
-# regions
-regions_list <- d02_pct_impact %>% 
-  select(region, region_label) %>% 
-  arrange(region) %>% 
+# regions - changed 7/22
+regions_list <- 
+  d02_pct_impact %>% 
+  select(region_group) %>% 
+  arrange(region_group) %>% 
   distinct() 
 
-regions_list <- regions_list$region_label %>% 
+regions_list <- 
+  #regions_list$region_label %>%
+  regions_list$region_group %>% 
   as.list()
 
 regions_list <- c("All Regions", regions_list)
@@ -229,9 +254,10 @@ ui <- navbarPage("Sensitivity Analysis Results",
                                               "Greenhouse Gas Fieldprint",
                                               "Soil Carbon Fieldprint",
                                               "Water Erosion Fieldprint",
-                                              "Wind Erosion Fieldprint",
-                                              "Water Quality Fieldprint"),
-                               selected = "Biodiversity Fieldprint"),
+                                              "Wind Erosion Fieldprint"
+                                              #"Water Quality Fieldprint"
+                                              ),
+                               selected = "Energy Use Fieldprint"),
                    selectInput("crop_1",
                                label = "Select Crop",
                                choices = list("Alfalfa",
@@ -246,17 +272,17 @@ ui <- navbarPage("Sensitivity Analysis Results",
                                               "Soybeans",
                                               "Sugar beets",
                                               "Wheat"),
-                               selected = "Alfalfa"),
+                               selected = "Corn grain"),
                    selectInput("irrigation_1",
                                label = "Select Irrigation Status",
                                choices = list("Irrigated",
                                               "Rainfed"),
-                               selected = "Irrigated"),
-                   selectInput("regions_1",
+                               selected = "Rainfed"),
+                   selectizeInput("regions_1",
                                label = "Select Region(s)",
                                choices = regions_list,
                                selected = "All Regions",
-                               multiple = TRUE),
+                               multiple = F),
                    # strong("Legend"),
                    #img(src="legend_1.PNG"),
                    h2(""),
@@ -299,7 +325,7 @@ ui <- navbarPage("Sensitivity Analysis Results",
                                       label = "Select Irrigation Status",
                                       choices = list("Irrigated",
                                                      "Rainfed"),
-                                      selected = "Irrigated"),
+                                      selected = "Rainfed"),
                           # strong("Legend"),
                           #img(src="legend_2.PNG"),
                           h2(""),
