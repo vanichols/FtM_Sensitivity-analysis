@@ -1,0 +1,17 @@
+region,region_label,region_group
+1,North Central,Central
+2,Great Plains,Central
+3,Central MW/Corn Belt,Central
+4,Northeast,NE/Appalachia
+5,Appalachians,NE/Appalachia
+6,Southern Coastal Plain,Southeast
+7,Florida,Southeast
+8,Gulf Coast,Southeast
+9,MS River valley,Southeast
+10,Texas,Southwest/California
+11,W Texas/New Mexico,Southwest/California
+12,Mountains - Central ,Mountains/PNW
+13,Mountains-North,Mountains/PNW
+14,Far SW ,Southwest/California
+15,California,Southwest/California
+16,PNW,Mountains/PNW

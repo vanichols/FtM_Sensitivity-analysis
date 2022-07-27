@@ -1,0 +1,217 @@
+change_name,grouping,grouping_label,change_name_label
+alfalfa_harvest_type_dry_hay_small_square_bale,alfalfa_harvest_type,Alfalfa Harvest Type,Dry Hay Small Square Bale
+alfalfa_harvest_type_green_chop,alfalfa_harvest_type,Alfalfa Harvest Type,Green Chop
+alfalfa_harvest_type_silage_stored_in_bags,alfalfa_harvest_type,Alfalfa Harvest Type,Silage Stored In Bags
+alfalfa_harvest_type_wet_baled_hay_round_wrapped,alfalfa_harvest_type,Alfalfa Harvest Type,Wet Baled Hay Round Wrapped
+alfalfa_residue_remains_high,alfalfa_residue,Alfalfa High/Low Residue,High
+alfalfa_stand_life_1,alfalfa_stand,Alfalfa Stand,1 Year
+alfalfa_stand_life_2,alfalfa_stand,Alfalfa Stand,2 Years
+alfalfa_stand_life_4,alfalfa_stand,Alfalfa Stand,4 Years
+alfalfa_stand_life_5,alfalfa_stand,Alfalfa Stand,5 Years
+application_method_anhydrous_ammonia,app_method,Fertilizer Application Method,Anhydrous Ammonia
+application_method_injected,app_method,Fertilizer Application Method,Injected
+application_method_surface_banded,app_method,Fertilizer Application Method,Banded
+application_method_broadcasted_and_incorporated,app_method,Fertilizer Application Method,Broadcast and Incorporated
+ground_water_applied_1,applied_water,Applied Water,1/3 Less Water
+ground_water_applied_2,applied_water,Applied Water,1/3 More Water
+ground_water_applied_3,applied_water,Applied Water,2/3 More Water
+ground_water_applied_4,applied_water,Applied Water,Double Water Rate
+backhauling_yes,backhaul,Backhauling Y/N,Yes
+base,base,Base,Base
+cotton_target_moisture_very_dry,cotton_moisture,Cotton Moisture,Very Dry
+cotton_target_moisture_wetter_than_normal,cotton_moisture,Cotton Moisture,Wetter Than Normal
+cotton_target_moisture_very_wet,cotton_moisture,Cotton Moisture,Very Wet
+crop_rotation_practice_crop_to_fallow,crop_rotation,Crop Rotation,Crop To Fallow
+crop_rotation_practice_continuous_single_crop,crop_rotation,Crop Rotation,Continuous Single Crop
+crop_rotation_practice_alfalfa_no_rotation,crop_rotation,Crop Rotation,Alfalfa - No Rotation
+drying_energy_source_grid,drying_energy,Crop Drying Energy,Grid
+drying_energy_source_wind,drying_energy,Crop Drying Energy,Wind
+drying_energy_source_fuel_diesel,drying_energy,Crop Drying Energy,Diesel
+drying_energy_source_fuel_B100_biodiesel,drying_energy,Crop Drying Energy,B100 Biodiesel
+drying_energy_source_fuel_natural_gas,drying_energy,Crop Drying Energy,Natural Gas
+drying_system_in_bin_combination,drying_system,Crop Drying System,In Bin - Combination
+drying_system_in_bin_natural_air,drying_system,Crop Drying System,In Bin - Natural Air
+drying_system_batch_dryer_continuous,drying_system,Crop Drying System,Batch Dryer - Continuous
+drying_system_no_drying_system,drying_system,Crop Drying System,No Drying System
+alfalfa_drying_system_no_drying_system,drying_system,Crop Drying System,Alfalfa - No Drying System
+alfalfa_drying_system_fan_and_supplemental_heating,drying_system,Crop Drying System,Alfalfa - Fan with Heating
+conservation_enhancements_choose_0,enhancements,Conservation Enhancements,None
+conservation_enhancements_choose_1,enhancements,Conservation Enhancements,One
+conservation_enhancements_choose_2,enhancements,Conservation Enhancements,Two
+conservation_enhancements_choose_3,enhancements,Conservation Enhancements,Three
+fertilizer_customrate_none,fert_custom_rate,Fertilizer Custom Rate,None
+fertilizer_customrate_half,fert_custom_rate,Fertilizer Custom Rate,Half
+fertilizer_customrate_1,fert_custom_rate,Fertilizer Custom Rate,20% Higher
+fertilizer_customrate_2,fert_custom_rate,Fertilizer Custom Rate,40% Higher
+fertilizer_customrate_3,fert_custom_rate,Fertilizer Custom Rate,60% Higher
+fertilizer_customrate_4,fert_custom_rate,Fertilizer Custom Rate,80% Higher
+fertilizer_customrate_5,fert_custom_rate,Fertilizer Custom Rate,100% Higher
+pest_management_ipm_without_chemical_control,ipm,IPM,IPM w/o Chemical Control
+pest_management_ipm_including_chemical_control,ipm,IPM,IPM w/ Chemical Control
+pest_management_chemical_and_site_specific,ipm,IPM,Chemical Control and Site-specific Techniques
+irrigation_method_center_pivot,irri_method,Irrigation Method,Center Pivot
+irrigation_method_center_pivot_with_pam,irri_method,Irrigation Method,Center Pivot with PAM
+irrigation_method_surface_graded_border_and_surge,irri_method,Irrigation Method,Surface - Graded Border and Surge
+irrigation_method_surface_graded_furrow,irri_method,Irrigation Method,Surface - Graded Furrow
+irrigation_method_surface_wild_flood,irri_method,Irrigation Method,Surface - Wild Flood
+irrigation_method_trickle_drip,irri_method,Irrigation Method,Trickle / Drip
+irrigation_method_level_basin_blocked_end,irri_method,Irrigation Method,Level Basin / Blocked End
+ground_irrigation_energy_no,irrigation_energy,Irrigation Energy Y/N,No
+lime_no,lime,Lime Application,None
+lime_2,lime,Lime Application,2 tons/acre
+lime_3,lime,Lime Application,3 tons/acre
+lime_4,lime,Lime Application,4 tons/acre
+lime_5,lime,Lime Application,5 tons/acre
+manure_amount_0_2000,manure_amount,Manure Amount,0 - 2000 lb or gal/ac
+manure_amount_4000_6000,manure_amount,Manure Amount,4000 - 6000 lb or gal/ac
+manure_amount_6000_8000,manure_amount,Manure Amount,6000 - 8000 lb or gal/ac
+manure_amount_8000_10000,manure_amount,Manure Amount,8000 - 10000 lb or gal/ac
+manure_amount_12000_14000,manure_amount,Manure Amount,12000 - 14000 lb or gal/ac
+manure_amount_18000_20000,manure_amount,Manure Amount,18000 - 20000 lb or gal/ac
+manure_none,manure_type,Manure Type,None
+manure_type_solid,manure_type,Manure Type,Solid
+transportation_distance_5,mileage,Transportation Distance,5 miles
+transportation_distance_15,mileage,Transportation Distance,15 miles
+transportation_distance_35,mileage,Transportation Distance,35 miles
+transportation_distance_45,mileage,Transportation Distance,45 miles
+transportation_distance_55,mileage,Transportation Distance,55 miles
+moisture_removed_1,moisture,Points of Moisture Removed,1
+moisture_removed_3,moisture,Points of Moisture Removed,3
+moisture_removed_5,moisture,Points of Moisture Removed,5
+moisture_removed_7,moisture,Points of Moisture Removed,7
+moisture_removed_9,moisture,Points of Moisture Removed,9
+moisture_removed_11,moisture,Points of Moisture Removed,11
+peanuts_initial_moisture_9,peanut_moisture,Peanuts Moisture,9
+peanuts_initial_moisture_12,peanut_moisture,Peanuts Moisture,12
+peanuts_initial_moisture_18,peanut_moisture,Peanuts Moisture,18
+peanuts_initial_moisture_21,peanut_moisture,Peanuts Moisture,21
+is_irrigated_false,no_irrigation,Irrigation Y/N,No
+residue_burning_false,no_residue_burning,Residue Burning Y/N,No
+seed_treatments_no,no_seed_trt,Seed Treatment Y/N,No
+nutrient_application_rate_no_fertilizer_applied,nutrient_app,Nutrient Application,No Fertilizer Applied
+nutrient_application_rate_50_less,nutrient_app,Nutrient Application,50% Less
+nutrient_application_rate_40_less,nutrient_app,Nutrient Application,40% Less
+nutrient_application_rate_30_less,nutrient_app,Nutrient Application,30% Less
+nutrient_application_rate_20_less,nutrient_app,Nutrient Application,20% Less
+nutrient_application_rate_10_less,nutrient_app,Nutrient Application,10% Less
+nutrient_application_rate_10_over,nutrient_app,Nutrient Application,10% Over
+nutrient_application_rate_20_over,nutrient_app,Nutrient Application,20% Over
+nutrient_management_plan_true_no_rs,nutrient_plan,Nutrient Plan,Plan Used
+nutrient_management_plan_false_1_rs,nutrient_plan,Nutrient Plan,Plan Not Used - 1 R
+nutrient_management_plan_false_2_rs,nutrient_plan,Nutrient Plan,Plan Not Used - 2 R's
+nutrient_management_plan_false_3_rs,nutrient_plan,Nutrient Plan,Plan Not Used - 3 R's
+nutrient_management_plan_false_4_rs,nutrient_plan,Nutrient Plan,Plan Not Used - 4 R's
+protectants_2_low,protectants,Crop Protectants,No Crop Protectants
+protectants_3_low,protectants,Crop Protectants,Half of Base Scenario - 1 Trip
+protectants_4_low,protectants,Crop Protectants,Double of Base Scenario - 1 Trip
+protectants_1_medium,protectants,Crop Protectants,Base Scenario - 1+ Trips
+protectants_4_medium,protectants,Crop Protectants,Double of Base Scenario - 1+ Trips
+protectants_1_high,protectants,Crop Protectants,Base Scenario - Individual Trips
+protectants_4_high,protectants,Crop Protectants,Double of Base Scenario - Individual Trips
+protectants_3_high,protectants,Crop Protectants,Half of Base Scenario - Individual Trips
+protectants_3_medium,protectants,Crop Protectants,Half of Base Scenario - 1+ Trips
+pumping_depth_0_25,pumping_depth,Pumping Depth,0 - 25 ft
+pumping_depth_26_75,pumping_depth,Pumping Depth,26 - 75 ft
+pumping_depth_76_125,pumping_depth,Pumping Depth,76 - 125 ft
+pumping_depth_126_175,pumping_depth,Pumping Depth,126 - 175 ft
+pumping_depth_176_225,pumping_depth,Pumping Depth,176 - 225 ft
+pumping_depth_226_275,pumping_depth,Pumping Depth,226 - 275 ft
+pumping_depth_276_325,pumping_depth,Pumping Depth,276 - 325 ft
+pumping_depth_326_375,pumping_depth,Pumping Depth,326 - 375 ft
+pumping_depth_376_425,pumping_depth,Pumping Depth,376 - 425 ft
+ground_energy_source_electricity_wind,pumping_energy,Pumping Energy,Electricity - Wind
+ground_energy_source_fuel_diesel,pumping_energy,Pumping Energy,Fuel - Diesel
+ground_energy_source_fuel_B100_biodiesel,pumping_energy,Pumping Energy,Fuel - B100 Biodiesel
+ground_energy_source_fuel_natural_gas,pumping_energy,Pumping Energy,Fuel - Natural Gas
+pumping_pressure_5_10,pumping_pressure,Pumping Pressure,5 - 10 psi
+pumping_pressure_16_20,pumping_pressure,Pumping Pressure,16 - 20 psi
+pumping_pressure_31_40,pumping_pressure,Pumping Pressure,31 - 40 psi
+pumping_pressure_51_60,pumping_pressure,Pumping Pressure,51 - 60 psi
+pumping_pressure_71_80,pumping_pressure,Pumping Pressure,71 - 80 psi
+pumping_pressure_91_100,pumping_pressure,Pumping Pressure,91 - 100 psi
+rice_cultivar_semi_dwarf,rice_cultivar,Rice Cultivar,Semi Dwarf
+rice_cultivar_CLXL745,rice_cultivar,Rice Cultivar,CLXL745
+rice_organic_fertilizer_type_compost,rice_manure,Rice Manure,Compost
+rice_organic_fertilizer_type_green_manure,rice_manure,Rice Manure,Green Manure
+rice_planting_method_drill_seeded,rice_planting_method,Rice Planting Method,Drill Seeded
+rice_cultivar_ratoon,rice_ratoon,Rice Ratoon Y/N,Yes
+rice_residue_high,rice_residue,Rice High/Low Residue,High
+rice_season_enhancements_no_flooding,rice_season_enhancements,Rice Conservation Enhancements,No Flooding
+rice_sulfate_rate_0,rice_sulfate,Rice Sulfate Rate,0 lbs/acre
+rice_sulfate_rate_25,rice_sulfate,Rice Sulfate Rate,25 lbs/acre
+rice_sulfate_rate_50,rice_sulfate,Rice Sulfate Rate,50 lbs/acre
+rice_sulfate_rate_75,rice_sulfate,Rice Sulfate Rate,75 lbs/acre
+rice_sulfate_rate_100,rice_sulfate,Rice Sulfate Rate,100 lbs/acre
+rice_sulfate_rate_125,rice_sulfate,Rice Sulfate Rate,125 lbs/acre
+rice_sulfate_rate_150,rice_sulfate,Rice Sulfate Rate,150 lbs/acre
+rice_sulfate_rate_175,rice_sulfate,Rice Sulfate Rate,175 lbs/acre
+rice_sulfate_rate_200,rice_sulfate,Rice Sulfate Rate,200 lbs/acre
+rice_sulfate_rate_225,rice_sulfate,Rice Sulfate Rate,225 lbs/acre
+rice_sulfate_rate_250,rice_sulfate,Rice Sulfate Rate,250 lbs/acre
+rice_sulfate_rate_275,rice_sulfate,Rice Sulfate Rate,275 lbs/acre
+rice_sulfate_rate_300,rice_sulfate,Rice Sulfate Rate,300 lbs/acre
+rice_sulfate_rate_325,rice_sulfate,Rice Sulfate Rate,325 lbs/acre
+rice_sulfate_rate_350,rice_sulfate,Rice Sulfate Rate,350 lbs/acre
+rice_water_regime_intermittently_flooded_single,rice_water_regimen,Rice Water Regimen,Intermittently Flooded - Single
+rice_water_regime_intermittently_flooded_multiple,rice_water_regimen,Rice Water Regimen,Intermittently Flooded - Multiple
+seeding_rate_less_than_10,seeding_rate,Seeding Rate,Less than 10 lbs/acre
+seeding_rate_10_15,seeding_rate,Seeding Rate,10-15 lbs/acre
+seeding_rate_16_20,seeding_rate,Seeding Rate,16-20 lbs/acre
+seeding_rate_26_30,seeding_rate,Seeding Rate,26-30 lbs/acre
+seeding_rate_more_than_30,seeding_rate,Seeding Rate,More than 30 lbs/acre
+seeding_rate_100_119,seeding_rate,Seeding Rate,100-119 lbs/acre
+seeding_rate_120_140,seeding_rate,Seeding Rate,120-140 lbs/acre
+seeding_rate_Less_than_24000,seeding_rate,Seeding Rate,Less than 24000 seeds/acre
+seeding_rate_24000_25999,seeding_rate,Seeding Rate,24000 - 25999
+seeding_rate_42000_44000,seeding_rate,Seeding Rate,42000 - 44000 seeds/acre
+seeding_rate_More_than_44000,seeding_rate,Seeding Rate,More than 44000 seeds/acre
+seeding_rate_0_9999,seeding_rate,Seeding Rate,0-9999 seeds/acre
+seeding_rate_20000_29999,seeding_rate,Seeding Rate,20000-29999 seeds/acre
+seeding_rate_70000_79999,seeding_rate,Seeding Rate,70000-79999 seeds/acre
+seeding_rate_more_than_80000,seeding_rate,Seeding Rate,More than 80000
+seeding_rate_40_59,seeding_rate,Seeding Rate,40-59 lb/acre
+seeding_rate_60_79,seeding_rate,Seeding Rate,60-79 lb/acre
+seeding_rate_80_99,seeding_rate,Seeding Rate,80-99 lbs/acre
+seeding_rate_160_179,seeding_rate,Seeding Rate,160-179 lb/acre
+seeding_rate_180_200,seeding_rate,Seeding Rate,180-200 lb/acre
+seeding_rate_10_12_99,seeding_rate,Seeding Rate,10-12.99 cwt/acre
+seeding_rate_13_15_99,seeding_rate,Seeding Rate,13-15.99 cwt/acre
+seeding_rate_34_36_99,seeding_rate,Seeding Rate,34-36.99 cwt/acre
+seeding_rate_37_39_99,seeding_rate,Seeding Rate,37-39.99 cwt/acre
+seeding_rate_less_than_30,seeding_rate,Seeding Rate,Less than 30 lbs/acre
+seeding_rate_31_60,seeding_rate,Seeding Rate,31-60 lbs/acre
+seeding_rate_61_90,seeding_rate,Seeding Rate,61-90 lbs/acre
+seeding_rate_more_than_90,seeding_rate,Seeding Rate,More than 90 lbs/acre
+seeding_rate_4_5_9,seeding_rate,Seeding Rate,4-4.9 lb/acre
+seeding_rate_6_7_9,seeding_rate,Seeding Rate,6-7.9 lbs/acre
+seeding_rate_8_10,seeding_rate,Seeding Rate,8-10 lb/acre
+seeding_rate_Less_than_150000,seeding_rate,Seeding Rate,Less than 150000 seeds/acre
+seeding_rate_175000_200000,seeding_rate,Seeding Rate,175000 - 200000 seeds/acre
+seeding_rate_More_than_200000,seeding_rate,Seeding Rate,More than 200000 seeds/acre
+seeding_rate_50000_59999,seeding_rate,Seeding Rate,50000-59999 seeds/acre
+seeding_rate_60000_70000,seeding_rate,Seeding Rate,60000-70000 seeds/acre
+seeding_rate_Less_than_850000,seeding_rate,Seeding Rate,Less than 850000 seeds/acre
+seeding_rate_1000000_1249999,seeding_rate,Seeding Rate,1000000 - 1249999 seeds/acre
+seeding_rate_1750000_2000000,seeding_rate,Seeding Rate,1750000 - 2000000 seeds/acre
+seeding_rate_More_than_2000000,seeding_rate,Seeding Rate,More than 2000000 seeds/acre
+soil_condition_dry,soil_condition,Soil Condition,Dry
+soil_condition_frozen,soil_condition,Soil Condition,Frozen
+tile_drainage_standard_density,tile_drainage,Tile Drainage,Standard Density
+tile_drainage_standard_density_with_drainage_water_management,tile_drainage,Tile Drainage,Standard Density with Drainage Water Management
+tile_drainage_high_density,tile_drainage,Tile Drainage,High Density
+tile_drainage_high_density_with_drainage_water_management,tile_drainage,Tile Drainage,High Density with Drainage Water Management
+transportation_fuel_id_B100_Biodiesel,transpo_fuel,Transportation Fuel Type,B100 Biodiesel
+transportation_fuel_id_gasoline_regular,transpo_fuel,Transportation Fuel Type,Gasoline Regular
+transportation_fuel_id_E85_gasoline,transpo_fuel,Transportation Fuel Type,E85 Gasoline
+transportation_fuel_id_propane_lpg,transpo_fuel,Transportation Fuel Type,Propane LPG
+water_source_alluvial_groundwater_irrigation_conservation_True,water_source,Irrigation Water Source,"Alluvial Groundwater, With Conservation Methods"
+water_source_alluvial_groundwater_irrigation_conservation_False,water_source,Irrigation Water Source,"Alluvial Groundwater, Without Conservation Methods"
+water_source_surface_water_irrigation_conservation_True,water_source,Irrigation Water Source,"Surface Water, With Conservation Methods"
+water_source_surface_water_irrigation_conservation_False,water_source,Irrigation Water Source,"Surface Water, Without Conservation Methods"
+wildlife_habitat_ids_choose_0,wildlife,Wildlife Habitat Y/N,No
+wind_barrier_true,wind_barrier,Wind Barrier Y/N,Yes
+Conventional Tillage,tillage_type,Tillage Type,Conventional Tillage
+Reduced Tillage,tillage_type,Tillage Type,Reduced Tillage
+No till,tillage_type,Tillage Type,No Till
+TRUE,cover_crop,Cover Crop,Yes
+FALSE,cover_crop,Cover Crop,No

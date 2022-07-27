@@ -1,0 +1,8 @@
+metric,metric_label,metric_unit
+biodiversity_fieldprint,Biodiversity Fieldprint,Habitat Potential Index
+energy_use_fieldprint,Energy Use Fieldprint,BTU/unit crop
+greenhouse_gas_fieldprint,Greenhouse Gas Fieldprint,Lbs of CO2e/unit crop
+soil_carbon_fieldprint,Soil Carbon Fieldprint,Soil Conditioning Index
+soil_conservation_water_fieldprint,Water Erosion Fieldprint,Tons of soil loss/acre/year
+soil_conservation_wind_fieldprint,Wind Erosion Fieldprint,Tons of soil loss/acre/year
+water_quality_fieldprint,Water Quality Fieldprint,Water Quality Index
