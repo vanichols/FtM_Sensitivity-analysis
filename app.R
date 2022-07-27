@@ -107,9 +107,9 @@ plt_1 <- function(m, c, irr_stat, reg) {
 
 filter_2 <- function(m, c, irr_stat) {
   
-  # m <- "Soil Carbon Fieldprint"
-  # c <- "Corn grain"
-  # irr_stat <- "Irrigated"
+   # m <- "Soil Carbon Fieldprint"
+   # c <- "Corn grain"
+   # irr_stat <- "Irrigated"
   
   dat <- d01_sa_output
   
@@ -146,25 +146,51 @@ plt_2 <- function(m, c, irr_stat) {
   m_col <- metric_lookup$metric[metric_lookup$metric_label == m]
   m_unit <- metric_lookup$metric_unit[metric_lookup$metric_label == m]
   
-  gg <- dat %>% 
-    highlight_key(~base_scenario) %>% 
-    ggplot(aes(x = get(m_col), y = cover_crop, text = paste0(m, ": ", round(get(m_col), digits = 1)))) +
-    geom_vline(aes(xintercept = 0), color = "grey70") +
-    geom_point(aes(color = tillage_type, shape = cover_crop), alpha = 0.8, size = 2) +
-    facet_wrap(~region_label, ncol = 1)+
-    scale_shape_manual(breaks = c("Yes", "No"), values = c(1,16)) +
-    #theme_cust_2() +
-    theme(legend.position = "none",
-          axis.text.y = element_blank(),
-          axis.ticks.y = element_blank(),
-          strip.text.x = element_text(margin = margin(2,2,2,2))) +
-    labs(title = paste0(m, ": ", c, ", ", irr_stat), 
-         color = "Tillage Type", shape = "Cover Crop") +
-    ylab("") +
-    xlab(m_unit)
+  # old - has weird layout and cover crop distinction not showing up 7/22 
+  # gg <- dat %>%
+  #   highlight_key(~base_scenario) %>%
+  #   ggplot(aes(x = get(m_col), y = cover_crop, text = paste0(m, ": ", round(get(m_col), digits = 1)))) +
+  #   geom_vline(aes(xintercept = 0), color = "grey70") +
+  #   geom_point(aes(color = tillage_type, shape = cover_crop), alpha = 0.8, size = 2) +
+  #   facet_wrap(~region_label, ncol = 1)+
+  #   scale_shape_manual(breaks = c("Yes", "No"), values = c(1,16)) +
+  #   #theme_cust_2() +
+  #   theme(legend.position = "none",
+  #         axis.text.y = element_blank(),
+  #         axis.ticks.y = element_blank(),
+  #         strip.text.x = element_text(margin = margin(2,2,2,2))) +
+  #   labs(title = paste0(m, ": ", c, ", ", irr_stat),
+  #        color = "Tillage Type", shape = "Cover Crop") +
+  #   ylab("") +
+  #   xlab(m_unit)
   
-  ggplotly(gg, tooltip = "text", height = max(length(unique(dat$region_label))*80, 200)) %>% 
-    highlight(on = "plotly_click", off = "plotly_doubleclick")
+  #--try to change layout 7/22
+  gg <-
+    dat %>%
+    #highlight_key(~base_scenario) %>%
+    ggplot(aes(x = region_label,
+               y = get(m_col),
+               #y = cover_crop,
+               text = paste0(m, ": ", round(get(m_col), digits = 1)))) +
+    #geom_vline(aes(xintercept = 0), color = "grey70") +
+    geom_point(aes(color = cover_crop, shape = cover_crop), alpha = 1, size = 2) +
+    geom_hline(yintercept = 0, color = "grey70") +
+    scale_color_manual(values = c("Yes" = "green4", "No" = "gold4")) +
+    #scale_shape_manual(breaks = c("Yes", "No"), values = c(1,16)) +
+    #theme_cust_2() +
+    theme(legend.position = "top", 
+          legend.direction = "horizontal") +
+    labs(title = paste0(m, ": ", c, ", ", irr_stat),
+         color = "Cover Crop",
+         shape = "Cover Crop",
+         x = NULL,
+         y = m_unit) +
+    facet_grid(.~tillage_type) +
+    coord_flip()
+  
+  plot(gg)
+  # ggplotly(gg, tooltip = "text", height = max(length(unique(dat$region_label))*80, 200)) %>% 
+  #   highlight(on = "plotly_click", off = "plotly_doubleclick")
   
 }
 
@@ -267,13 +293,14 @@ ui <- navbarPage("Sensitivity Analysis Results",
                                                      "Rainfed"),
                                       selected = "Irrigated"),
                           # strong("Legend"),
-                          img(src="legend_2.PNG"),
+                          #img(src="legend_2.PNG"),
                           h2(""),
                           downloadButton("downloadData_2", "Download Data")
              ),
              
              mainPanel(
-               plotlyOutput("plt_2", width = "100%", height = "auto")
+               #plotlyOutput("plt_2", width = "100%", height = "auto")
+               plotOutput("plt_2")#, width = "100%", height = "90%")
              )
            )
            
@@ -288,7 +315,7 @@ server <- function(input, output) {
     plt_1(input$metric_1, input$crop_1, input$irrigation_1, input$regions_1)
   })
   
-  output$plt_2 <- renderPlotly({
+  output$plt_2 <- renderPlot({
     plt_2(input$metric_2, input$crop_2, input$irrigation_2)
   })
   
