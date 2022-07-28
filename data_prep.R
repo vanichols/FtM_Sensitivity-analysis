@@ -32,6 +32,10 @@ sa_output_2$irrigation_status <- "Rainfed"
 # combine
 sa_output <- bind_rows(sa_output_1, sa_output_2)
 
+
+
+
+
 # reference tables -------
 # ref_scenarios <- read_csv("raw_data/ref_table_scenarios.csv")
 # ref_region_names <- read_excel("raw_data/FTM Region Descriptions.xlsx")

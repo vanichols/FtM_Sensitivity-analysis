@@ -121,7 +121,8 @@ plt_1 <- function(m, c, irr_stat, reg) {
       coord_flip()
   
   ggplotly(gg, tooltip = "text", height = max(length(unique(dat$change_name_label))*20, 200)) %>%
-    highlight(on = "plotly_click", off = "plotly_doubleclick")
+    highlight(on = "plotly_click", off = "plotly_doubleclick") %>% 
+    layout(height = 800, width = 1200)
   
 }
 
@@ -155,7 +156,7 @@ filter_2 <- function(m, c, irr_stat) {
       grouping == "base", 
       crop == c, 
       irrigation_status == irr_stat) %>% 
-    select(crop, irrigation_status, region, region_label, base_scenario, cover_crop, tillage_type, m_col) %>% 
+    select(crop, irrigation_status, region, region_group, region_label, base_scenario, cover_crop, tillage_type, m_col) %>% 
     mutate(cover_crop = ifelse(cover_crop == TRUE, "Yes", "No"),
            tillage_type = ifelse(tillage_type == "No till", "No Till", tillage_type)) %>% 
     mutate(region_label = factor(region_label, levels = sorter$region_label, ordered = TRUE),
@@ -206,15 +207,22 @@ plt_2 <- function(m, c, irr_stat) {
     geom_hline(yintercept = 0, color = "grey70") +
     scale_color_manual(values = c("Yes" = "green4", "No" = "gold4")) +
     scale_shape_manual(values = c("Yes" = 17, "No" = 19)) +
+      scale_y_continuous(labels = label_comma()) +
   #theme_cust_2() +
-    theme(legend.position = "top", 
-          legend.direction = "horizontal") +
+      facet_grid(region_group ~ tillage_type, scales = "free", 
+                 labeller = label_wrap_gen(15),
+                 switch = "y") +
+      theme(legend.position = "top", 
+          legend.direction = "horizontal",
+          axis.text.x = element_text(angle = 45, hjust = 1),
+          strip.text.y.left = element_text(angle = 0),
+          strip.placement = "outside") +
     labs(title = paste0(m, ": ", c, ", ", irr_stat),
          color = "Cover Crop",
          shape = "Cover Crop",
          x = NULL,
          y = m_unit) +
-    facet_grid(.~tillage_type) +
+  
     coord_flip()
   
   #plot(gg)
@@ -290,21 +298,26 @@ ui <- navbarPage("Sensitivity Analysis Results",
       ),
       
       mainPanel(
-        plotlyOutput("plt_1", width = "100%", height = "auto")
+        plotlyOutput("plt_1")#, width = "100%", height = "auto")
       )
     )
     
   ),
   
-  tabPanel("Soil Outcomes",
+  tabPanel("Absolute Impact",
            
            sidebarLayout(
              sidebarPanel(width = 2,
                           selectInput("metric_2",
                                       label = "Select Metric",
-                                      choices = list("Soil Carbon Fieldprint",
+                                      choices = list("Biodiversity Fieldprint",
+                                                     "Energy Use Fieldprint",
+                                                     "Greenhouse Gas Fieldprint",
+                                                     "Soil Carbon Fieldprint",
                                                      "Water Erosion Fieldprint",
-                                                     "Wind Erosion Fieldprint"),
+                                                     "Wind Erosion Fieldprint"
+                                                     #"Water Quality Fieldprint"
+                                      ),
                                       selected = "Soil Carbon Fieldprint"),
                           selectInput("crop_2",
                                       label = "Select Crop",
